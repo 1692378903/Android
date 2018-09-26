@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.right_layout, fragment);
+        transaction.replace(R.id.right_fragment, fragment);
+        transaction.addToBackStack(null);               //可以返回到上一个fragment，不会直接退出
         transaction.commit();
     }
 }
