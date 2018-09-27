@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:andriod="http://schemas.android.com/apk/res-auto"
-    package="activitytest.example.com.broadcasttest">
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    package="activitytest.example.com.broadcasttest2">
 
     <application
         android:allowBackup="true"
@@ -22,18 +18,10 @@
         </activity>
 
         <receiver
-            android:name=".BootCompleteReceive"
+            android:name=".AnotherBroadcastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-        <receiver
-            android:name=".MybroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter android:priority="100">
                 <action android:name="activitytest.example.com.broadcasttest.MY_BROADCAST"/>
             </intent-filter>
         </receiver>
